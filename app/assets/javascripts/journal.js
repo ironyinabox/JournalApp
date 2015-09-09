@@ -4,7 +4,10 @@ window.Journal = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    this.indexView = new Journal.Views.PostsIndex({});
+    this.indexView.collection.fetch({
+      reset: true
+    });
   }
 };
 

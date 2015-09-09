@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resource :root, only: [:index]
 
   resources :posts,
-    only: [:index, :show, :new, :create],
+    only: [:index, :show, :new, :create, :destroy],
     defaults: { format: 'json' }
 end
