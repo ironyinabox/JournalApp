@@ -4,10 +4,9 @@ window.Journal = {
   Views: {},
   Routers: {},
   initialize: function() {
-    this.indexView = new Journal.Views.PostsIndex({});
-    this.indexView.collection.fetch({
-      reset: true
-    });
+
+    var router = new Journal.Routers.Posts('.journal');
+    Backbone.history.start();
   }
 };
 

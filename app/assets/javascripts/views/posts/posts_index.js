@@ -17,6 +17,8 @@ Journal.Views.PostsIndex = Backbone.View.extend({
       var postLI = new Journal.Views.PostsIndexItem({ model: post });
       this.$('ul').append(postLI.render().$el); // this.$el.find('ul')
     }.bind(this));
+
+    return this;
   }
 
 

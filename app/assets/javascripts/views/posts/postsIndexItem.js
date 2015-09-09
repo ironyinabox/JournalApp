@@ -11,12 +11,17 @@ Journal.Views.PostsIndexItem = Backbone.View.extend({
     return this;
   },
 
-  postDelete: function () {
-    this.model.destroy();
+  events: {
+    "click strong": "selectPost",
+    "click .post-delete": "postDelete"
   },
 
-  events: {
-    "click .post-delete": "postDelete"
+  selectPost: function (e) {
+    Backbone.history.navigate('/posts/' + this.model.id, { trigger: true });
+  },
+
+  postDelete: function () {
+    this.model.destroy();
   }
 
 });

@@ -13,7 +13,7 @@ Journal.Collections.Posts = Backbone.Collection.extend({
       post = new Journal.Models.Post({ id: id });
       collection.add(post);
       post.fetch({
-        error: function() { colleciton.remove(post); }
+        error: function() { collection.remove(post); }
       });
     }
 
