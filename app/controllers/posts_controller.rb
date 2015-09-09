@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :set_post, only: [:edit, :show, :destroy]
+  before_action :set_post, only: [:edit, :show, :destroy, :update]
 
   def create
     @post = Post.new(post_params)
@@ -10,6 +10,7 @@ class PostsController < ApplicationController
       render json: @post.errors.full_messages, status: 422
     end
   end
+  
   def new
   end
 
@@ -22,6 +23,14 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
+  end
+
+  def update
+    if @post.update(post_params)
+      render :show
+    else
+      render :show, status: 422
+    end
   end
 
   private

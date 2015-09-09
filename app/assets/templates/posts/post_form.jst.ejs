@@ -1,0 +1,12 @@
+  <label>
+    Title:
+    <input type="text" name="post[title]" value="<%= post.escape("title") %>">
+  </label>
+  <br>
+  <label>
+    Body:
+    <textarea name="post[body]">
+      <%= post.escape("body") %>
+    </textarea>
+  </label>
+  <button>Post!</button>
